@@ -13614,7 +13614,8 @@ figcaption {
   transform: translateY(-5px);
   background: var(--gradient-red-hover);
 }
-#about .social-icone a:hover::before{
+
+#about .social-icone a:hover::before {
   opacity: 1;
 }
 
@@ -13623,7 +13624,7 @@ figcaption {
   color: var(--color-body-white);
 }
 
-#about  .social-icone a:hover svg{
+#about .social-icone a:hover svg {
   color: var(--color-white);
 }
 
@@ -15630,9 +15631,10 @@ div#featured-project-carousel {
   color: var(--color-lightn);
 }
 
-.modal-row-gap{
+.modal-row-gap {
   margin-bottom: 20px;
 }
+
 /*=====================
     Skill Area 
 ========================*/
@@ -16913,344 +16915,88 @@ div#featured-project-carousel {
 /*------------------------------
     Client Single Card 
 --------------------------------*/
-.client-card {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px;
-  margin-top: -30px;
-}
-
-@media only screen and (max-width: 479px) {
-  .client-card {
-    padding: 0 20px;
-  }
-}
-
-.client-card .main-content {
-  margin-top: 30px;
-  flex-basis: 33.33%;
-  padding: 0 15px;
-}
-
-@media only screen and (max-width: 767px) {
-  .client-card .main-content {
-    flex-basis: 50%;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .client-card .main-content {
-    flex-basis: 50%;
-  }
-}
-
-@media only screen and (max-width: 479px) {
-  .client-card .main-content {
-    flex-basis: 100%;
-  }
-}
-
-.client-card .main-content .inner {
-  background: var(--background-color-1);
-  box-shadow: var(--shadow-1);
-  border-radius: 10px;
+.logo-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 30px 0;
   position: relative;
-  z-index: 2;
 }
 
-.client-card .main-content .inner::after {
-  content: "";
-  position: absolute;
-  transition: var(--transition);
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to right bottom, #212428, #16181c);
-  opacity: 0;
-  z-index: -1;
-  border-radius: 8px;
+.slider-track {
+  display: inline-flex;
+  animation: scroll 25s linear infinite;
 }
 
-.client-card .main-content .inner:hover::after {
-  opacity: 1;
-}
-
-.client-card .main-content .thumbnail {
-  height: 150px;
+/* Each logo inside a card */
+.logo-card {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+  display: flex;
   align-items: center;
-  display: flex;
   justify-content: center;
-  padding: 30px;
+  margin: 0 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--gradient-box-w);
+  box-shadow: var(--shadow-white-3);
 }
 
-.client-card .main-content .thumbnail a {
-  display: block;
+/* Hover effect */
+.logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.client-card .main-content .thumbnail a img {
-  max-height: 90px;
-}
-
-.client-card .main-content .seperator {
-  position: relative;
-  z-index: 2;
-}
-
-.client-card .main-content .seperator::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1a1d23;
-  z-index: -1;
-}
-
-.client-card .main-content .client-name {
-  padding: 16px;
-  color: #7c838e;
-}
-
-.client-card .main-content .client-name a {
-  transition: var(--transition);
-  color: #7c838e;
-}
-
-.client-card .main-content .client-name a:hover {
-  color: var(--color-primary);
-}
-
-.client-card .main-content .client-name a span {
-  color: var(--color-light);
-  font-size: 16px;
-}
-
-.rn-brand {
-  flex-basis: 33.33%;
-  padding: 0 15px;
-}
-
-@media only screen and (max-width: 767px) {
-  .rn-brand {
-    flex-basis: 50%;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .rn-brand {
-    flex-basis: 50%;
-  }
-}
-
-@media only screen and (max-width: 479px) {
-  .rn-brand {
-    flex-basis: 100%;
-  }
-}
-
-.rn-brand .inner {
-  background: var(--background-color-1);
-  box-shadow: var(--shadow-1);
-  border-radius: 10px;
-  position: relative;
-  z-index: 2;
-}
-
-@media only screen and (max-width: 1199px) {
-  .rn-brand .inner.smlg-brand {
-    width: 250px;
-  }
-}
-
-.rn-brand .inner::after {
-  content: "";
-  position: absolute;
-  transition: var(--transition);
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to right bottom, #212428, #16181c);
-  opacity: 0;
-  z-index: -1;
-  border-radius: 8px;
-}
-
-.rn-brand .inner:hover::after {
-  opacity: 1;
-}
-
-.rn-brand .thumbnail img {
-  width: 265px;
-  height: 175px;
-  padding: 30px;
+/* Logo image */
+.logo-card img {
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
-  text-align: center;
-  display: inline-block;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .rn-brand .thumbnail img {
+.logo-card:hover img {
+  filter: grayscale(0);
+}
+
+/* Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .logo-card {
+    height: 180px;
+    width: 180px;
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-card {
     height: 150px;
-    padding: 30px;
-    object-fit: contain;
+    width: 150px;
+    margin: 0 10px;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .rn-brand .thumbnail img {
-    padding: 30px;
-    object-fit: contain;
-    height: 148px !important;
-  }
-}
 
-@media only screen and (max-width: 767px) {
-  .rn-brand .thumbnail img {
-    height: 148px !important;
-    padding: 30px;
-    object-fit: contain;
-  }
-}
 
-@media only screen and (max-width: 479px) {
-  .rn-brand .thumbnail img {
-    height: 148px !important;
-    padding: 30px;
-    object-fit: contain;
-  }
-}
 
-.rn-brand .seperator {
-  position: relative;
-  z-index: 2;
-}
 
-.rn-brand .seperator::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1a1d23;
-  z-index: -1;
-}
 
-.rn-brand .client-name {
-  padding: 16px;
-  color: #7c838e;
-}
 
-.rn-brand .client-name a {
-  transition: var(--transition);
-  color: #7c838e;
-}
 
-.rn-brand .client-name a:hover {
-  color: var(--color-primary);
-}
 
-.rn-brand .client-name a span {
-  color: var(--color-light);
-  font-size: 16px;
-}
-
-.brand-activation-item-5 {
-  margin: -28px 0;
-}
-
-.brand-activation-item-5 .rn-brand .inner {
-  margin: 28px 0;
-}
-
-.brand-wrapper-three {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.brand-wrapper-three .rn-brand {
-  margin-bottom: 30px;
-  flex-basis: 20%;
-}
-
-.rn-client-style-2 .skill-style-1 {
-  margin-bottom: 0;
-  margin-top: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.rn-client-style-2 .client-card .main-content .client-name a {
-  color: var(--color-lightn);
-}
-
-.rn-client-style-2 .client-card .main-content .client-name a:hover {
-  color: var(--color-primary);
-}
-
-.rn-client-style-2 .client-card {
-  justify-content: center;
-  margin-top: 20px;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .rn-client-style-2 .client-card {
-    margin-top: 15px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .rn-client-style-2 .client-card {
-    margin-top: 15px;
-  }
-}
-
-.rn-client-style-2 .client-card .main-content {
-  flex-basis: 25%;
-}
-
-@media only screen and (max-width: 767px) {
-  .rn-client-style-2 .client-card .main-content {
-    flex-basis: 50%;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .rn-client-style-2 .client-card .main-content {
-    flex-basis: 50%;
-  }
-}
-
-@media only screen and (max-width: 479px) {
-  .rn-client-style-2 .client-card .main-content {
-    flex-basis: 80%;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .rn-client-style-2 .client-card .main-content {
-    flex-basis: 33%;
-  }
-}
-
-.rn-client-style-2 .client-card .main-content .thumbnail img {
-  height: auto;
-}
-
-.rn-client-style-2 ul {
-  padding: 0;
-}
-
-span.sr-only {
-  display: none;
-}
 
 /*---------------------------
     Pricing Area Styles 
@@ -18029,7 +17775,8 @@ span.sr-only {
   width: 100%;
 }
 
-.contact-about-area .social-area .name {
+.contact-about-area .social-area .name,
+.rn-footer-area .social-area .name{
   font-size: 14px;
   font-family: var(--font-secondary);
   font-weight: 500;
@@ -18037,11 +17784,14 @@ span.sr-only {
   margin-bottom: 8px;
 }
 
-.contact-about-area .social-area .social-icone {
+.contact-about-area .social-area .social-icone,
+.rn-footer-area .social-area .social-icone{
   margin-top: 24px;
 }
 
-.contact-about-area .social-area .social-icone a {
+.contact-about-area .social-area .social-icone a,
+.rn-footer-area .social-area .social-icone a
+{
   width: 61px;
   height: 61px;
   line-height: 57px;
@@ -18053,7 +17803,13 @@ span.sr-only {
   text-align: center;
 }
 
-.contact-about-area .social-area .social-icone a::before {
+.rn-footer-area .social-area .social-icone a{
+      background: var(--gradient-box-w);
+    box-shadow: var(--shadow-white-3);
+    border-radius: 6px;
+}
+.contact-about-area .social-area .social-icone a::before,
+.rn-footer-area .social-area .social-icone a::before {
   content: "";
   position: absolute;
   transition: var(--transition);
@@ -18067,22 +17823,36 @@ span.sr-only {
   z-index: -1;
 }
 
-.contact-about-area .social-area .social-icone a svg {
+.contact-about-area .social-area .social-icone a svg,
+.rn-footer-area .social-area .social-icone a svg {
   stroke-width: 2;
   width: 20px;
   color: var(--color-lightn);
+  color: var(--color-body-white);
   transition: var(--transition);
 }
 
-.contact-about-area .social-area .social-icone a:hover {
+.rn-footer-area .social-area .social-icone a svg {
+  width: 20px;
+  color: var(--color-body-white);
+}
+
+.contact-about-area .social-area .social-icone a:hover,
+.rn-footer-area .social-area .social-icone a:hover {
   transform: translateY(-5px);
 }
 
-.contact-about-area .social-area .social-icone a:hover svg {
+.rn-footer-area .social-area .social-icone a:hover {
+  background: var(--gradient-red-hover);
+}
+
+.contact-about-area .social-area .social-icone a:hover svg,
+.rn-footer-area .social-area .social-icone a:hover svg {
   color: var(--color-white);
 }
 
-.contact-about-area .social-area .social-icone a:hover::before {
+.contact-about-area .social-area .social-icone a:hover::before,
+.rn-footer-area .social-area .social-icone a:hover::before{
   opacity: 1;
 }
 
