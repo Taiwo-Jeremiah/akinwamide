@@ -1,6 +1,6 @@
 (function() {
   emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY", // replace with your actual public key
+    publicKey: "kjuZxbjYShK4ij5O6", // replace with your actual public key
   });
 })();
 
@@ -9,7 +9,7 @@ const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+  emailjs.sendForm('service_hx5pppd', 'template_m8di6lj', this)
     .then(() => {
       alert('Message sent successfully!');
       contactForm.reset();
