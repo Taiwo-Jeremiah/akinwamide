@@ -17,6 +17,10 @@
   width: fit-content;
 }
 
+.filter-btn a{
+  color: #000;
+}
+
 .filter-btn:hover,
 .filter-btn.active {
   background: transparent;

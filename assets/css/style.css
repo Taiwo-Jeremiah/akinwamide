@@ -7730,7 +7730,7 @@ textarea:-ms-input-placeholder {
   font-weight: 400;
   transition: var(--transition);
   display: inline-block;
-  background: #ffffff;
+  background: #fff;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -11818,6 +11818,11 @@ body.template-color-1 {
   margin-right: -18px;
 }
 
+#header-right .rn-btn {
+  display: block !important;
+  white-space: nowrap;
+}
+
 @media only screen and (max-width: 575px) {
   .header-wrapper .header-right a.rn-btn {
     font-size: 14px;
@@ -12078,7 +12083,7 @@ body.template-color-1 {
   }
 
   .logo a,
-  .menu-header a  {
+  .menu-header a {
     font-size: 2.5rem;
   }
 }
@@ -12088,11 +12093,16 @@ body.template-color-1 {
 }
 
 .logo a,
-.menu-header a{
+.menu-header a {
   display: inline-block;
   font-size: 2rem;
   color: #3c3e41;
   font-weight: 700;
+}
+
+.logo a,
+.menu-header a {
+  white-space: nowrap;
 }
 
 .logo a span,
@@ -15333,10 +15343,18 @@ figcaption {
 
 .rn-service .inner .content p.description {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 25px;
   color: var(--color-lightn);
-  margin-bottom: 22px;
+  margin-bottom: 10px;
   transition: var(--transition);
+}
+
+.rn-service .inner .content .description span {
+  color: var(--color-primary);
+}
+
+.rn-service:hover .inner .content .description span {
+  color: white;
 }
 
 .rn-service .inner .content .read-more-button {
@@ -22787,4 +22805,68 @@ body.white-version .rn-btn-ulderline {
 
 .white-version .slider-style-6 .cd-headline span {
   color: var(--color-white) !important;
+}
+
+/* Wrapper spacing */
+.graphics .container .inner-wrapper {
+  padding: 0 1.2rem 3rem;
+  margin-top: 5rem;
+}
+
+/* Background colors for each category */
+.graphics .container .wrapper1 {
+  background: #730939;
+}
+
+.graphics .container .wrapper2 {
+  background: #112b06;
+}
+
+.graphics .container .wrapper3 {
+  background: #360335;
+}
+
+/* Section headings */
+.graphics .container .inner-wrapper h3 {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+/* -------------------------------
+   GRID LAYOUT (replaces flexbox)
+--------------------------------*/
+.graphics {
+  margin-top: 200px;
+}
+.graphics .container .inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-block: 4rem 3rem;
+  place-items: center; /* centers images in grid cells */
+}
+
+/* Default image sizing */
+.graphics .container .inner-wrapper .inner img {
+  width: 250px;
+  height: auto;
+}
+
+/* Special wide image */
+.graphics .container .inner-wrapper .inner .rachel-long-img {
+  width: 600px;
+  height: 250px;
+  grid-column: span 2; /* OPTIONAL: makes the image span 2 columns */
+}
+
+@media only screen and (max-width: 530px) {
+  .graphics .container .inner-wrapper .inner img {
+    grid-column: span 2;
+  }
+
+  .graphics .container .inner-wrapper .inner img,
+  .graphics .container .inner-wrapper .inner .rachel-long-img {
+    width: 100% !important;
+    height: auto;
+  }
 }
