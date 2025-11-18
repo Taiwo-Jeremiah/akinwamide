@@ -11819,7 +11819,7 @@ body.template-color-1 {
 }
 
 #header-right .rn-btn {
-  display: block !important;
+  /* display: block !important; */
   white-space: nowrap;
 }
 
